@@ -36,6 +36,11 @@ body {
   position: relative;
 }
 
+
+#notification {
+  color: green;
+}
+
 #contact input[type="text"],
 #contact input[type="email"],
 #contact input[type="tel"],
@@ -153,27 +158,26 @@ fieldset {
     </style>
 </head>
 <body>
-    
-    <div class="container">  
-        <form id="contact" action="" method="post">
+
+    <div class="container">
+        <form id="contact" onsubmit="return handleSubmit()">
           <h3>Chispa Registration form</h3>
           <h4>You have a great day!</h4>
           <fieldset>
-            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+            <input id="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
           </fieldset>
           <fieldset>
-            <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+            <input id="phone" placeholder="Your Phone Number" type="tel" tabindex="3" required>
           </fieldset>
           <fieldset>
-            <input placeholder="Your Email Address" type="email" tabindex="2" required>
-          </fieldset>
-          <fieldset>
-            <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
-          </fieldset>
+           <label id="notification"> </label>
+         </fieldset>
           <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
           </fieldset>
         </form>
       </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js" charset="utf-8"></script>
+<script src="app.min.js" charset="utf-8"></script>
 </html>
